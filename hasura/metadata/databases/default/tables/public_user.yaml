@@ -1,0 +1,25 @@
+table:
+  schema: public
+  name: user
+array_relationships:
+  - name: user_from_payment_summary
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          schema: public
+          name: payment_summary
+  - name: user_from_user_event
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          schema: public
+          name: user_event
+  - name: user_from_user_group
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          schema: public
+          name: user_group

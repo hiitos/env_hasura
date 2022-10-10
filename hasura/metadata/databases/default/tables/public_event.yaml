@@ -1,0 +1,26 @@
+table:
+  schema: public
+  name: event
+object_relationships:
+  - name: event_groups
+    using:
+      foreign_key_constraint_on:
+        column: event_id
+        table:
+          schema: public
+          name: event_group
+array_relationships:
+  - name: payment_events
+    using:
+      foreign_key_constraint_on:
+        column: event_id
+        table:
+          schema: public
+          name: payment_summary
+  - name: user_events
+    using:
+      foreign_key_constraint_on:
+        column: event_id
+        table:
+          schema: public
+          name: user_event

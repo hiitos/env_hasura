@@ -1,0 +1,1 @@
+CREATE TABLE "public"."payment_summary" ("payment_id" integer NOT NULL, "date" timestamptz NOT NULL DEFAULT now(), "payment_item" text NOT NULL, "amount_paid" Integer NOT NULL, "user_id" integer NOT NULL, "event_id" integer NOT NULL, PRIMARY KEY ("payment_id") );
