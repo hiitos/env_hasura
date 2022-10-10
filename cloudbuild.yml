@@ -12,6 +12,8 @@ steps:
       - "DB_PORT=$_DB_PORT"
       - "--build-arg"
       - "DB_DATABASE=$_DB_DATABASE"
+      - "--build-arg"
+      - "HASURA_ADMIN_SECRET=$_HASURA_ADMIN_SECRET"
       - '--no-cache'
       - '-t'
       - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'

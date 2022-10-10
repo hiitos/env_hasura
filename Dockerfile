@@ -6,6 +6,7 @@ ARG DB_PASSWORD
 ARG DB_HOST
 ARG DB_PORT
 ARG DB_DATABASE
+ARG HASURA_ADMIN_SECRET
 
 # # migration, metadataをコピー
 COPY ./hasura/migrations /hasura_migrations
@@ -14,6 +15,7 @@ COPY ./hasura/metadata /hasura_metadata
 # Hasura環境変数値設定
 ENV HASURA_GRAPHQL_DATABASE_URL="postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}"
 ENV HASURA_GRAPHQL_ENABLE_CONSOLE="true"
+ENV HASURA_GRAPHQL_ADMIN_SECRET="${HASURA_ADMIN_SECRET}"
 ENV HASURA_GRAPHQL_MIGRATIONS_DIR=/hasura_migrations
 ENV HASURA_GRAPHQL_METADATA_DIR=/hasura_metadata
 
