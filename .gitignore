@@ -1,1 +1,43 @@
 .env
+textmemo.txt
+
+# 作成者: https://www.toptal.com/developers/gitignore/api/terraform
+# https://www.toptal.com/developers/gitignore?templates=terraform で編集
+
+### テラフォーム ###
+# ローカルの .terraform ディレクトリ
+**/.terraform/*
+
+# .tfstate ファイル
+*.tfstate
+*.tfstate.*
+
+# クラッシュ ログ ファイル
+クラッシュログ
+クラッシュ.*.ログ
+
+# 次のような機密データが含まれている可能性があるすべての .tfvars ファイルを除外します。
+# パスワード、秘密鍵、およびその他の秘密。これらはバージョンの一部であってはなりません
+# 機密性が高く、対象となる可能性のあるデータ ポイントであるため、管理する
+# 環境によって変わる。
+*.tfvars
+*.tfvars.json
+
+# オーバーライド ファイルは通常、リソースをローカルでオーバーライドするために使用されるため、無視します。
+# はチェックインされていません
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# 否定パターンを使用してバージョン管理に追加したいオーバーライド ファイルを含める
+# !example_override.tf
+
+# コマンドのプラン出力を無視する tfplan ファイルを含めます: terraform plan -out=tfplan
+# 例: *tfplan*
+
+# CLI 設定ファイルを無視
+.terraformrc
+terraform.rc
+
+# https://www.toptal.com/developers/gitignore/api/terraform の終わり

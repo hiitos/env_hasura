@@ -1,0 +1,3 @@
+FROM hashicorp/terraform:1.0.10
+
+ENTRYPOINT /bin/sh

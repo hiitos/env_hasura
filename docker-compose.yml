@@ -32,13 +32,24 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_terraform
-    image: hashicorp/terraform:1.1.3
+    image: hashicorp/terraform:1.2.1
     container_name: terraform_container
     tty: true
+    working_dir: /terraform   #コンテナ内の作業ディレクトリ指定
     volumes:
-      - "./:/root/work"
-      - "$HOME/.aws:/root/.aws"
-    working_dir: /root/work/terraform/env
-    entrypoint: ash
+      - ./terraform/:/terraform:cached   #ローカルのterraformディレクトリ配下をコンテナ内の作業ディレクトリ内にバインドマウント
+      - ./gcloud-config:/root/.config   #ローカルのgcloud認証情報をterraform用コンテナにバインドマウント
+    # entrypoint: ash
+    environment:
+      - TF_VAR_billing_id=$TF_VAR_billing_id
+      - TF_VAR_gcp_project=$TF_VAR_gcp_project
+  gcloud:
+    image: google/cloud-sdk:386.0.0-alpine
+    container_name: 'gcloud'
+    working_dir: /terraform
+    volumes:
+      - ./gcloud-config:/root/.config
+
 volumes:
   db_data:
+  gcloud-config:  #バインドマウント先としてローカルディレクトリ指定、存在しない場合は自動で作成される

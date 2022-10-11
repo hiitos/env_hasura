@@ -1,0 +1,87 @@
+2022-10-11 10:16:14,275 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2022-10-11 10:16:14,283 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'application_default']
+2022-10-11 10:16:14,648 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'application-default', 'login']
+2022-10-11 10:16:14,661 DEBUG    root            Running [gcloud.auth.application-default.login] with arguments: [--project: "walica-line-mini-app"]
+2022-10-11 10:16:14,674 DEBUG    requests_oauthlib.oauth2_session Generated new state ITK3BuY3rmjXIjsJIBVmwt5NIpqLhj.
+2022-10-11 10:16:14,679 INFO     ___FILE_ONLY___ You are authorizing client libraries without access to a web browser. Please run the following command on a machine with a web browser and copy its output back here. Make sure the installed gcloud version is 372.0.0 or newer.
+
+gcloud auth application-default login --remote-bootstrap="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=ITK3BuY3rmjXIjsJIBVmwt5NIpqLhj&access_type=offline&code_challenge=eaWWU-Cs_bNmZUAli4z9pXOvgr1nYvpArEJG8L15-KA&code_challenge_method=S256&token_usage=remote"
+
+2022-10-11 10:16:14,680 INFO     ___FILE_ONLY___ 
+
+
+2022-10-11 10:16:20,661 DEBUG    root            (mismatching_state) CSRF Warning! State not equal in request and response.
+Traceback (most recent call last):
+  File "/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 987, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/google-cloud-sdk/lib/surface/auth/application_default/login.py", line 137, in Run
+    creds = auth_util.DoInstalledAppBrowserFlowGoogleAuth(
+  File "/google-cloud-sdk/lib/googlecloudsdk/api_lib/auth/util.py", line 303, in DoInstalledAppBrowserFlowGoogleAuth
+    user_creds = NoBrowserFlowRunner(scopes, client_config).Run()
+  File "/google-cloud-sdk/lib/googlecloudsdk/api_lib/auth/util.py", line 138, in Run
+    return self._flow.Run(**kwargs)
+  File "/google-cloud-sdk/lib/googlecloudsdk/core/credentials/flow.py", line 231, in Run
+    return self._Run(**kwargs)
+  File "/google-cloud-sdk/lib/googlecloudsdk/core/credentials/flow.py", line 551, in _Run
+    self.fetch_token(
+  File "/google-cloud-sdk/lib/third_party/google_auth_oauthlib/flow.py", line 280, in fetch_token
+    return self.oauth2session.fetch_token(
+  File "/google-cloud-sdk/lib/third_party/requests_oauthlib/oauth2_session.py", line 233, in fetch_token
+    self._client.parse_request_uri_response(
+  File "/google-cloud-sdk/lib/third_party/oauthlib/oauth2/rfc6749/clients/web_application.py", line 240, in parse_request_uri_response
+    response = parse_authorization_code_response(uri, state=state)
+  File "/google-cloud-sdk/lib/third_party/oauthlib/oauth2/rfc6749/parameters.py", line 281, in parse_authorization_code_response
+    raise MismatchingStateError()
+oauthlib.oauth2.rfc6749.errors.MismatchingStateError: (mismatching_state) CSRF Warning! State not equal in request and response.
+2022-10-11 10:16:20,686 ERROR    ___FILE_ONLY___ BEGIN CRASH STACKTRACE
+Traceback (most recent call last):
+  File "/google-cloud-sdk/lib/googlecloudsdk/command_lib/crash_handling.py", line 191, in Wrapper
+    target_function(*args, **kwargs)
+  File "/google-cloud-sdk/lib/googlecloudsdk/gcloud_main.py", line 186, in main
+    gcloud_cli.Execute()
+  File "/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 1013, in Execute
+    self._HandleAllErrors(exc, command_path_string, specified_arg_names)
+  File "/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 1050, in _HandleAllErrors
+    exceptions.HandleError(exc, command_path_string, self.__known_error_handler)
+  File "/google-cloud-sdk/lib/googlecloudsdk/calliope/exceptions.py", line 547, in HandleError
+    core_exceptions.reraise(exc)
+  File "/google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py", line 146, in reraise
+    six.reraise(type(exc_value), exc_value, tb)
+  File "/google-cloud-sdk/lib/third_party/six/__init__.py", line 693, in reraise
+    raise value
+  File "/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 987, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/google-cloud-sdk/lib/surface/auth/application_default/login.py", line 137, in Run
+    creds = auth_util.DoInstalledAppBrowserFlowGoogleAuth(
+  File "/google-cloud-sdk/lib/googlecloudsdk/api_lib/auth/util.py", line 303, in DoInstalledAppBrowserFlowGoogleAuth
+    user_creds = NoBrowserFlowRunner(scopes, client_config).Run()
+  File "/google-cloud-sdk/lib/googlecloudsdk/api_lib/auth/util.py", line 138, in Run
+    return self._flow.Run(**kwargs)
+  File "/google-cloud-sdk/lib/googlecloudsdk/core/credentials/flow.py", line 231, in Run
+    return self._Run(**kwargs)
+  File "/google-cloud-sdk/lib/googlecloudsdk/core/credentials/flow.py", line 551, in _Run
+    self.fetch_token(
+  File "/google-cloud-sdk/lib/third_party/google_auth_oauthlib/flow.py", line 280, in fetch_token
+    return self.oauth2session.fetch_token(
+  File "/google-cloud-sdk/lib/third_party/requests_oauthlib/oauth2_session.py", line 233, in fetch_token
+    self._client.parse_request_uri_response(
+  File "/google-cloud-sdk/lib/third_party/oauthlib/oauth2/rfc6749/clients/web_application.py", line 240, in parse_request_uri_response
+    response = parse_authorization_code_response(uri, state=state)
+  File "/google-cloud-sdk/lib/third_party/oauthlib/oauth2/rfc6749/parameters.py", line 281, in parse_authorization_code_response
+    raise MismatchingStateError()
+oauthlib.oauth2.rfc6749.errors.MismatchingStateError: (mismatching_state) CSRF Warning! State not equal in request and response.
+2022-10-11 10:16:20,697 ERROR    root            gcloud crashed (MismatchingStateError): (mismatching_state) CSRF Warning! State not equal in request and response.
+2022-10-11 10:16:20,700 INFO     ___FILE_ONLY___ 
+If you would like to report this issue, please run the following command:
+
+2022-10-11 10:16:20,702 INFO     ___FILE_ONLY___   gcloud feedback
+
+2022-10-11 10:16:20,703 INFO     ___FILE_ONLY___ 
+To check gcloud for common problems, please run the following command:
+
+2022-10-11 10:16:20,705 INFO     ___FILE_ONLY___   gcloud info --run-diagnostics
+
