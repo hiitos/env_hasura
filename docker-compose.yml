@@ -28,17 +28,5 @@ services:
       - postgres
     ports:
       - "8080:8080"
-  tf:
-    build:
-      context: .
-      dockerfile: Dockerfile_terraform
-    image: hashicorp/terraform:1.1.3
-    container_name: terraform_container
-    tty: true
-    volumes:
-      - "./:/root/work"
-      - "$HOME/.aws:/root/.aws"
-    working_dir: /root/work/terraform/env
-    entrypoint: ash
 volumes:
   db_data:
