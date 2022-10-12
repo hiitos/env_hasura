@@ -49,7 +49,6 @@ services:
     working_dir: /terraform
     volumes:
       - ./gcloud-config:/root/.config
-
 volumes:
   db_data:
   gcloud-config:  #バインドマウント先としてローカルディレクトリ指定、存在しない場合は自動で作成される
