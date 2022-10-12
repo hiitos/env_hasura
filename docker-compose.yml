@@ -4,6 +4,7 @@ services:
     image: docker.io/postgres:13.5-alpine3.15
     command: postgres -c jit=off
     container_name: app_postgres13.5
+    platform: linux/amd64
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
