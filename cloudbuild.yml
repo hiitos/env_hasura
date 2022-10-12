@@ -45,13 +45,13 @@ images:
 options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
-  _TRIGGER_ID: 29f76ff7-880b-4d2d-ac7b-f266f310bb21
-  _SERVICE_NAME: hashura-app
   _DEPLOY_REGION: asia-northeast1
   _GCR_HOSTNAME: asia.gcr.io
+  _LABELS: gcb-trigger-id=23a29c90-ab9f-4898-b17e-d5ae31a37975
+  _TRIGGER_ID: 23a29c90-ab9f-4898-b17e-d5ae31a37975
   _PLATFORM: managed
-  _LABELS: gcb-trigger-id=29f76ff7-880b-4d2d-ac7b-f266f310bb21
+  _SERVICE_NAME: cloudrun-srv
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
-  - hashura-app
+  - cloudrun-srv
