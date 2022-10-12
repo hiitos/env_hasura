@@ -1,0 +1,60 @@
+2022-10-11 10:17:44,279 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2022-10-11 10:17:44,289 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'application_default']
+2022-10-11 10:17:44,672 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'application-default', 'login']
+2022-10-11 10:17:44,686 DEBUG    root            Running [gcloud.auth.application-default.login] with arguments: [--project: "walica-line-mini-app"]
+2022-10-11 10:17:44,699 DEBUG    requests_oauthlib.oauth2_session Generated new state L3JU4nrtSwevxhjArcanmxKOuUtRfv.
+2022-10-11 10:17:44,704 INFO     ___FILE_ONLY___ You are authorizing client libraries without access to a web browser. Please run the following command on a machine with a web browser and copy its output back here. Make sure the installed gcloud version is 372.0.0 or newer.
+
+gcloud auth application-default login --remote-bootstrap="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=L3JU4nrtSwevxhjArcanmxKOuUtRfv&access_type=offline&code_challenge=UIqL-iMaLxPJiybaENvrThhpADTv4tiXLCEGXX-rXFc&code_challenge_method=S256&token_usage=remote"
+
+2022-10-11 10:17:44,705 INFO     ___FILE_ONLY___ 
+
+
+2022-10-11 10:19:06,624 DEBUG    requests_oauthlib.oauth2_session Requesting url https://oauth2.googleapis.com/token using method POST.
+2022-10-11 10:19:06,631 DEBUG    requests_oauthlib.oauth2_session Supplying headers {b'Accept': b'application/json', b'Content-Type': b'application/x-www-form-urlencoded;charset=UTF-8', b'user-agent': b'google-cloud-sdk gcloud/386.0.0 command/gcloud.auth.application-default.login invocation-id/2580b26b970d46e9b621fe9ad7db2d9c environment/None environment-version/None interactive/True from-script/False python/3.9.7 term/xterm (Linux 5.10.124-linuxkit)'} and data {'grant_type': 'authorization_code', 'client_id': '764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com', 'client_secret': 'd-FL95Q19q7MQmFpd7hHD0Ty', 'code': '4/0ARtbsJqttnWQbee-dmaFmWYKCd49elxav2H--ZZ6fCe4lP-czepgqhuDSBLI9PNVe8Ct4A', 'redirect_uri': 'http://localhost:8085/', 'code_verifier': '7ruMcf.6dunborHbRItkmd3dK~-PDOCH9u_mQCe32X__BR8-ZFgzYl.XyhKDqoS2K.36xL9CV9AJTu7Z7d8HR26AMRebtRmCCSqxRexy52-TUFcG_MPqMgMoDf5E3xA9'}
+2022-10-11 10:19:06,635 DEBUG    requests_oauthlib.oauth2_session Passing through key word arguments {'json': None, 'timeout': None, 'auth': None, 'verify': None, 'proxies': None}.
+2022-10-11 10:19:06,651 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2022-10-11 10:19:06,924 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2022-10-11 10:19:06,934 DEBUG    requests_oauthlib.oauth2_session Prepared fetch token request body grant_type=authorization_code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&client_secret=d-FL95Q19q7MQmFpd7hHD0Ty&code=4%2F0ARtbsJqttnWQbee-dmaFmWYKCd49elxav2H--ZZ6fCe4lP-czepgqhuDSBLI9PNVe8Ct4A&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&code_verifier=7ruMcf.6dunborHbRItkmd3dK~-PDOCH9u_mQCe32X__BR8-ZFgzYl.XyhKDqoS2K.36xL9CV9AJTu7Z7d8HR26AMRebtRmCCSqxRexy52-TUFcG_MPqMgMoDf5E3xA9
+2022-10-11 10:19:06,935 DEBUG    requests_oauthlib.oauth2_session Request to fetch token completed with status 200.
+2022-10-11 10:19:06,937 DEBUG    requests_oauthlib.oauth2_session Request headers were {'user-agent': b'google-cloud-sdk gcloud/386.0.0 command/gcloud.auth.application-default.login invocation-id/2580b26b970d46e9b621fe9ad7db2d9c environment/None environment-version/None interactive/True from-script/False python/3.9.7 term/xterm (Linux 5.10.124-linuxkit)', 'Accept-Encoding': 'gzip, deflate', 'Accept': b'application/json', 'Connection': 'keep-alive', 'Content-Type': b'application/x-www-form-urlencoded;charset=UTF-8', 'Content-Length': '421'}
+2022-10-11 10:19:06,939 DEBUG    requests_oauthlib.oauth2_session Request body was grant_type=authorization_code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&client_secret=d-FL95Q19q7MQmFpd7hHD0Ty&code=4%2F0ARtbsJqttnWQbee-dmaFmWYKCd49elxav2H--ZZ6fCe4lP-czepgqhuDSBLI9PNVe8Ct4A&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&code_verifier=7ruMcf.6dunborHbRItkmd3dK~-PDOCH9u_mQCe32X__BR8-ZFgzYl.XyhKDqoS2K.36xL9CV9AJTu7Z7d8HR26AMRebtRmCCSqxRexy52-TUFcG_MPqMgMoDf5E3xA9
+2022-10-11 10:19:06,941 DEBUG    requests_oauthlib.oauth2_session Response headers were {'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate', 'Pragma': 'no-cache', 'Expires': 'Mon, 01 Jan 1990 00:00:00 GMT', 'Date': 'Tue, 11 Oct 2022 10:19:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Origin, X-Origin, Referer', 'Content-Encoding': 'gzip', 'Server': 'scaffolding on HTTPServer2', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'X-Content-Type-Options': 'nosniff', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'Transfer-Encoding': 'chunked'} and content {
+  "access_token": "ya29.a0Aa4xrXNTuVT2PyJw523IdVYIDSovnm55lA6ZPqbr31qvO4fUCj2I3FxWddMwSBk-M7KOxVaKZYn5gR0pmBk2sg0SIZMTCfgf-E-a_ZRTYEbX_eKpclMGwWhlooY0eeSBVt3jrLgk6_wtsKbGQ9D8bSc6iuveaCgYKATASARISFQEjDvL9MMOKg1yedKS76N_zn2W5kA0163",
+  "expires_in": 3599,
+  "refresh_token": "1//0enbkZEqZi8vKCgYIARAAGA4SNwF-L9Irn-r3EEDifRsfi91XhincwuSBeuNxT1fHbybLDyDReO1dKeRO_I39FNnPpDMVVp5nHSk",
+  "scope": "openid https://www.googleapis.com/auth/accounts.reauth https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email",
+  "token_type": "Bearer",
+  "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk1NTEwNGEzN2ZhOTAzZWQ4MGM1NzE0NWVjOWU4M2VkYjI5YjBjNDUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI3NjQwODYwNTE4NTAtNnFyNHA2Z3BpNmhuNTA2cHQ4ZWp1cTgzZGkzNDFodXIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI3NjQwODYwNTE4NTAtNnFyNHA2Z3BpNmhuNTA2cHQ4ZWp1cTgzZGkzNDFodXIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDg5NjAzMDE2MjYwMTA4NDAzOTQiLCJlbWFpbCI6ImhpLmthMTc0OUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6InM2TG5kQ2FPVkotaWpRY0s1NkxGMWciLCJpYXQiOjE2NjU0ODM1NDYsImV4cCI6MTY2NTQ4NzE0Nn0.lUS3J6XcH_vT8oFi-k8qYi8UeZ0CY_Xkmky1oJl7i_h_KBoz6z_1roeyWCETR6fqRBWft4_cLA5MmvvFLgi-HBZDhbBmXGvxSNS4PxcAHnsBNgcSbYT_up1WLW0eepgyTDqLclljrdOlWkDoCYtod98dm1UtMyA91lKKUB0PfBBiAv78JVM-4DRKHP9DpImG42xBz6oUSkwKB2HBep1R4XCVMC6jG_7i2-9_KlFBnTSTtxH4R3NGMpy0d1Lz577Zlq8cuRdRBGtlOil0MhSqlKfgt6LrQGW99ehLqfuJp3-OCJqBMrHHzFkUaMsJhs5IXBNLhUaalbXRuCeUn1t3Xw"
+}.
+2022-10-11 10:19:06,943 DEBUG    requests_oauthlib.oauth2_session Invoking 0 token response hooks.
+2022-10-11 10:19:06,945 DEBUG    requests_oauthlib.oauth2_session Obtained token {'access_token': 'ya29.a0Aa4xrXNTuVT2PyJw523IdVYIDSovnm55lA6ZPqbr31qvO4fUCj2I3FxWddMwSBk-M7KOxVaKZYn5gR0pmBk2sg0SIZMTCfgf-E-a_ZRTYEbX_eKpclMGwWhlooY0eeSBVt3jrLgk6_wtsKbGQ9D8bSc6iuveaCgYKATASARISFQEjDvL9MMOKg1yedKS76N_zn2W5kA0163', 'expires_in': 3599, 'refresh_token': '1//0enbkZEqZi8vKCgYIARAAGA4SNwF-L9Irn-r3EEDifRsfi91XhincwuSBeuNxT1fHbybLDyDReO1dKeRO_I39FNnPpDMVVp5nHSk', 'scope': ['openid', 'https://www.googleapis.com/auth/accounts.reauth', 'https://www.googleapis.com/auth/cloud-platform', 'https://www.googleapis.com/auth/userinfo.email'], 'token_type': 'Bearer', 'id_token': 'eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk1NTEwNGEzN2ZhOTAzZWQ4MGM1NzE0NWVjOWU4M2VkYjI5YjBjNDUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI3NjQwODYwNTE4NTAtNnFyNHA2Z3BpNmhuNTA2cHQ4ZWp1cTgzZGkzNDFodXIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI3NjQwODYwNTE4NTAtNnFyNHA2Z3BpNmhuNTA2cHQ4ZWp1cTgzZGkzNDFodXIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDg5NjAzMDE2MjYwMTA4NDAzOTQiLCJlbWFpbCI6ImhpLmthMTc0OUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6InM2TG5kQ2FPVkotaWpRY0s1NkxGMWciLCJpYXQiOjE2NjU0ODM1NDYsImV4cCI6MTY2NTQ4NzE0Nn0.lUS3J6XcH_vT8oFi-k8qYi8UeZ0CY_Xkmky1oJl7i_h_KBoz6z_1roeyWCETR6fqRBWft4_cLA5MmvvFLgi-HBZDhbBmXGvxSNS4PxcAHnsBNgcSbYT_up1WLW0eepgyTDqLclljrdOlWkDoCYtod98dm1UtMyA91lKKUB0PfBBiAv78JVM-4DRKHP9DpImG42xBz6oUSkwKB2HBep1R4XCVMC6jG_7i2-9_KlFBnTSTtxH4R3NGMpy0d1Lz577Zlq8cuRdRBGtlOil0MhSqlKfgt6LrQGW99ehLqfuJp3-OCJqBMrHHzFkUaMsJhs5IXBNLhUaalbXRuCeUn1t3Xw', 'expires_at': 1665487145.945471}.
+2022-10-11 10:19:06,967 INFO     ___FILE_ONLY___ 
+Credentials saved to file: [/root/.config/gcloud/application_default_credentials.json]
+
+2022-10-11 10:19:06,969 INFO     ___FILE_ONLY___ 
+These credentials will be used by any library that requests Application Default Credentials (ADC).
+
+2022-10-11 10:19:06,984 INFO     root            Using alternate credentials from file: [/root/.config/gcloud/application_default_credentials.json]
+2022-10-11 10:19:07,056 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2022-10-11 10:19:07,063 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2022-10-11 10:19:07,228 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2022-10-11 10:19:07,264 INFO     root            Using alternate credentials from file: [/root/.config/gcloud/application_default_credentials.json]
+2022-10-11 10:19:07,380 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2022-10-11 10:19:08,198 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "POST /v1/projects/walica-line-mini-app:testIamPermissions?alt=json HTTP/1.1" 200 None
+2022-10-11 10:19:08,221 INFO     ___FILE_ONLY___ 
+Quota project "walica-line-mini-app" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.
+
+2022-10-11 10:19:08,226 INFO     root            Display format: "none"
+2022-10-11 10:19:08,234 DEBUG    root            Checking for updates...
+2022-10-11 10:19:08,245 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2022-10-11 10:19:08,452 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 203444
+2022-10-11 10:19:08,569 DEBUG    root            Updating notification cache...
+2022-10-11 10:19:08,570 DEBUG    root            Activating notification: [default]
+2022-10-11 10:19:08,571 INFO     ___FILE_ONLY___ 
+
+Updates are available for some Google Cloud CLI components.  To install them,
+please run:
+  $ gcloud components update
+
+
