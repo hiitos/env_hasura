@@ -1,5 +1,6 @@
 .env
 textmemo.txt
+.DS_Store
 
 # 作成者: https://www.toptal.com/developers/gitignore/api/terraform
 # https://www.toptal.com/developers/gitignore?templates=terraform で編集
