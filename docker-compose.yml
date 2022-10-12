@@ -28,7 +28,8 @@ services:
     depends_on:
       - postgres
     ports:
-      - "3000:8080"
+      - "0.0.0.0:8080:8080" # ここを変更していく
+      # - "8080:8080"
   tf:
     build:
       context: .
