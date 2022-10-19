@@ -1,4 +1,12 @@
 # Hasura App
+
+test dataの反映  
+```
+cd hasura
+source hasura_seeds_apply_command.sh
+```
+
+Docker コンテナ起動
 ```
 docker-compose up --build
 ```
