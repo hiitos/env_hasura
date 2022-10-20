@@ -13,6 +13,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
   graphql-engine:
+    image: graphql-img
     container_name: app_hasura
     build:
       context: .
@@ -28,7 +29,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "0.0.0.0:8080:8080" # ここを変更していく
+      - "0.0.0.0:3150:8080" # ここを変更していく
       # - "8080:8080"
   tf:
     build:
@@ -51,6 +52,7 @@ services:
     working_dir: /terraform
     volumes:
       - ./gcloud-config:/root/.config
+    platform: 'linux/amd64'
 volumes:
   db_data:
   gcloud-config:  #バインドマウント先としてローカルディレクトリ指定、存在しない場合は自動で作成される

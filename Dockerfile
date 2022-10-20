@@ -1,4 +1,7 @@
-FROM hasura/graphql-engine:v2.3.1.cli-migrations-v3
+FROM hasura/graphql-engine:v2.6.1.cli-migrations-v3.ubuntu.arm64
+# FROM hasura/graphql-engine:v2.0.9.cli-migrations-v3
+# hasura/graphql-engine:v2.3.1.cli-migrations-v3
+
 
 # Dockerfileに渡す変数
 ARG DB_USER
@@ -18,6 +21,9 @@ ENV HASURA_GRAPHQL_ENABLE_CONSOLE="true"
 ENV HASURA_GRAPHQL_ADMIN_SECRET="${HASURA_ADMIN_SECRET}"
 ENV HASURA_GRAPHQL_MIGRATIONS_DIR=/hasura_migrations
 ENV HASURA_GRAPHQL_METADATA_DIR=/hasura_metadata
+
+ENV PORT 8080
+ENV HOST 0.0.0.0
 
 # 通信用ポート開放
 EXPOSE 8080
