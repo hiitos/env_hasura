@@ -1,8 +1,0 @@
-- "!include public_event.yaml"
-- "!include public_event_group.yaml"
-- "!include public_group.yaml"
-- "!include public_payment_detail.yaml"
-- "!include public_payment_summary.yaml"
-- "!include public_user.yaml"
-- "!include public_user_event.yaml"
-- "!include public_user_group.yaml"

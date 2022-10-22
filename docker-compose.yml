@@ -4,7 +4,6 @@ services:
     image: docker.io/postgres:13.5-alpine3.15
     command: postgres -c jit=off
     container_name: app_postgres13.5
-    platform: linux/arm64/v8
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -13,7 +12,6 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
   graphql-engine:
-    image: graphql-img
     container_name: app_hasura
     build:
       context: .
@@ -29,29 +27,6 @@ services:
     depends_on:
       - postgres
     ports:
-      - "0.0.0.0:8080:8080" # ここを変更していく
-  tf:
-    build:
-      context: .
-      dockerfile: Dockerfile_terraform
-    image: hashicorp/terraform:1.2.1
-    container_name: terraform_container
-    tty: true
-    working_dir: /terraform   #コンテナ内の作業ディレクトリ指定
-    volumes:
-      - ./terraform/:/terraform:cached   #ローカルのterraformディレクトリ配下をコンテナ内の作業ディレクトリ内にバインドマウント
-      - ./gcloud-config:/root/.config   #ローカルのgcloud認証情報をterraform用コンテナにバインドマウント
-    # entrypoint: ash
-    environment:
-      - TF_VAR_billing_id=$TF_VAR_billing_id
-      - TF_VAR_gcp_project=$TF_VAR_gcp_project
-  gcloud:
-    image: google/cloud-sdk:386.0.0-alpine
-    container_name: gcloud_container
-    working_dir: /terraform
-    volumes:
-      - ./gcloud-config:/root/.config
-    platform: 'linux/amd64'
+      - "8080:8080"
 volumes:
   db_data:
-  gcloud-config:  #バインドマウント先としてローカルディレクトリ指定、存在しない場合は自動で作成される
