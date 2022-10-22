@@ -1,7 +1,9 @@
-FROM hasura/graphql-engine:v2.6.1.cli-migrations-v3.ubuntu.arm64
+# FROM hasura/graphql-engine:v2.1.0-beta.3.cli-migrations-v2.arm64
+FROM hasura/graphql-engine:v2.3.1.cli-migrations-v3
+# hasura/graphql-engine:v2.6.1.cli-migrations-v3.ubuntu.arm64
+# hasura/graphql-engine:v2.1.0-beta.3.cli-migrations-v2.arm64
 # FROM hasura/graphql-engine:v2.0.9.cli-migrations-v3
 # hasura/graphql-engine:v2.3.1.cli-migrations-v3
-
 
 # Dockerfileに渡す変数
 ARG DB_USER

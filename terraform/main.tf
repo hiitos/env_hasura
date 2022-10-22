@@ -113,7 +113,7 @@ resource "google_cloud_run_service" "defalut" {
   template {
     spec {
       containers {
-        image = "gcr.io/harat-tok-line/create_hasura_env"
+        image = "us-docker.pkg.dev/cloudrun/container/hello"
         env {
           name  = "DB_NAME"
           value = google_sql_database.database.name
