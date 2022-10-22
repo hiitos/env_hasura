@@ -1,6 +1,6 @@
 # Hasura App
 
-test dataの反映  
+test dataの反映(seeds)
 ```
 cd hasura
 source hasura_seeds_apply_command.sh
