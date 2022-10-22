@@ -3,7 +3,7 @@ services:
   postgres:
     image: docker.io/postgres:13.5-alpine3.15
     command: postgres -c jit=off
-    container_name: app_postgres13.5
+    container_name: app_postgres13.5_test
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -12,7 +12,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
   graphql-engine:
-    container_name: app_hasura
+    container_name: app_hasura_test
     build:
       context: .
       dockerfile: ./Dockerfile
