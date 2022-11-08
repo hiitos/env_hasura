@@ -2,7 +2,7 @@ actions:
   - name: auth
     definition:
       kind: synchronous
-      handler: http://localhost:3030/auth
+      handler: http://host.docker.internal:3030/auth
       forward_client_headers: true
     comment: auth
 custom_types:
