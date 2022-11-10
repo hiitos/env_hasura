@@ -1,0 +1,18 @@
+table:
+  schema: public
+  name: payment_summary
+object_relationships:
+  - name: payment_events
+    using:
+      foreign_key_constraint_on: event_id
+  - name: user_from_payment_summary
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: payment_details
+    using:
+      foreign_key_constraint_on:
+        column: payment_id
+        table:
+          schema: public
+          name: payment_detail

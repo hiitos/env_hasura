@@ -1,0 +1,7 @@
+table:
+  schema: public
+  name: payment_detail
+object_relationships:
+  - name: payment_details
+    using:
+      foreign_key_constraint_on: payment_id

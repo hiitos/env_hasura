@@ -1,0 +1,11 @@
+type Mutation {
+  auth(
+    lineId: String!
+    accessToken: String!
+  ): AuthOutput
+}
+
+type AuthOutput {
+  sessionToken: String!
+}
+

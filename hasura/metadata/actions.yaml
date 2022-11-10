@@ -1,6 +1,13 @@
-actions: []
+actions:
+  - name: auth
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3030/auth
+      forward_client_headers: true
+    comment: auth
 custom_types:
-    enums: []
-    input_objects: []
-    objects: []
-    scalars: []
+  enums: []
+  input_objects: []
+  objects:
+    - name: AuthOutput
+  scalars: []
